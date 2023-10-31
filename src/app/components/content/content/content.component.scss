@@ -1,0 +1,43 @@
+.colConteudo {
+  float: left;
+  width: 294px;
+  min-height: 100px;
+}
+.wrapConteudo:before,
+.wrapConteudo:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.wrapConteudo {
+  min-height: 400px;
+  padding: 5px 0;
+}
+.wrapConteudo > div + div {
+  padding: 5px;
+}
+.wrapConteudo h1 {
+  margin: 8px 0 8px 0;
+  padding: 0;
+  font-size: 25px;
+  border-bottom: 1px solid rgb(210, 208, 194);
+  color: #6f6f6f;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 25px;
+}
+
+.wrapConteudo table,
+.wrapConteudo th,
+.wrapConteudo tr,
+.wrapConteudo td {
+  border-width: 1px;
+  border-collapse: collapse;
+}
+
+@media (max-width: 750px) {
+  .mobile-content {
+    overflow-x: auto;
+    overflow-y: clip;
+  }
+}
