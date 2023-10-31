@@ -1,0 +1,38 @@
+.linha-topo-vermelha-1{
+	background-color:#ec3237;
+	height: 6px;
+}
+.acabamento-topo-vermelho {
+  background-color: #ec3237;
+  width: 60%;
+  height: 35px;
+  position: absolute;
+  right: 0;
+}
+
+.wrap-red-line{
+  position:absolute;
+  margin-top: -20px;
+  width: 100%;
+}
+
+.max-content-wrap-line{
+  background-color: purple;
+  width: calc(100% - 60px);
+}
+
+.content-user-menu{
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.triangulo-vermelho {
+  width: 0;
+  height: 0;
+  border-left: 60px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 35px solid #ec3237;
+  margin-left: -60px;
+  float: left;
+}
