@@ -1,0 +1,34 @@
+$cor-de-fundo: red;
+$cor-texto: #fff;
+$cor-borda: #848688;
+
+.component-home {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  min-width: 750px;
+}
+
+.bloco-item-home {
+  width: 200px;
+  border: solid 4px $cor-borda;
+  cursor: pointer;
+  margin: 0 auto;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.img-block {
+  height: 320px;
+  overflow: hidden;
+}
+
+.bloco-descricao {
+  background-color: $cor-de-fundo;
+  color: $cor-texto;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 40px;
+  border-top: solid 4px $cor-borda;
+}

@@ -1,0 +1,28 @@
+<div class="component-home">
+  <div class="bloco-item-home" [routerLink]="['/servicos']">
+      <div class="img-block">
+        <img src={{serviceImage}} alt="serviços" />
+      </div>
+      <div class="bloco-descricao">
+        <span>{{servicesTitle}}</span>
+      </div>
+  </div>
+
+  <div class="bloco-item-home" [routerLink]="['/catalogo']">
+      <div class="img-block">
+        <img src={{catalogImage}} alt="Catálogo" />
+      </div>
+      <div class="bloco-descricao">
+        <span>{{catalogTitle}}</span>
+      </div>
+  </div>
+
+  <div class="bloco-item-home" [routerLink]="['/loja']">
+      <div class="img-block">
+        <img src={{ecommerceImage}} alt="Loja Virtual Online" />
+      </div>
+      <div class="bloco-descricao">
+        <span>{{ecommerceTitle}}</span>
+      </div>
+  </div>
+</div>
