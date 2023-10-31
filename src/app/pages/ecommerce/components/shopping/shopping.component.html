@@ -1,0 +1,12 @@
+<div class="shop-item">
+  <div class="itemLoja" [routerLink]="['/produto', itemShop?.id]">
+      <div class="titItemLoja">
+        <h2 class="cor-preco">{{currencyFormat( (itemShop ? itemShop.preco : 0), "pt-BR", "BRL")}}</h2>
+      </div>
+      <div class="corpoItemLoja">
+          <img src={{fullUrl + itemShop.media[0].url}} alt={{itemShop?.tituloProduto}} />
+      </div>
+      <div class="precoItemLoja">{{itemShop?.tituloProduto}}</div>
+      <div class="rodapeItemLoja">&nbsp;</div>
+    </div>
+</div>
