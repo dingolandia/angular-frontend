@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+html,
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #555;
+}
+
+@import 'node_modules/ngx-spinner/animations/ball-scale-multiple.css';
+@import 'node_modules/ngx-spinner/animations/square-jelly-box.css';
+
+.quadro {
+  min-width: 996px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.conteudos {
+  position: relative;
+}
+
+@media (max-width: 1000px) {
+  .quadro {
+    min-width: auto;
+    width: auto;
+  }
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
