@@ -1,0 +1,14 @@
+.logo {
+  float: left;
+  padding: 15px 20px;
+  img {
+    filter: drop-shadow(2px 2px 2px #353336);
+  }
+}
+
+@media (max-width: 750px) {
+  .logo {
+    float: none;
+    text-align: center;
+  }
+}
