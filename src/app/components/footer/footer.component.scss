@@ -1,0 +1,50 @@
+.rodape {
+  background-color: #000;
+  color: #fff;
+  font-size: 12px;
+
+  .md {
+    width: 996px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.md100pc {
+  width: 100%;
+}
+
+.colTb {
+  display: table;
+  > li {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+.colTb .col1 {
+  float: left;
+  /* width: 44%; */
+  z-index: 50;
+}
+
+@media (max-width: 1000px) {
+  .rodape .md {
+    min-width: auto;
+    width: auto;
+  }
+}
+@media (max-width: 750px) {
+  .colTb {
+    display: block;
+    > li {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}
