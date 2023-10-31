@@ -1,0 +1,22 @@
+.icon-menu-mobile {
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+  .icon-menu-mobile {
+    display: block;
+    float: left;
+  }
+  .icon-menu-mobile > span {
+    font-size: 41px;
+  }
+}
+
+@media (max-width: 750px) {
+  .icon-menu-mobile {
+    position: absolute;
+    top: 18px;
+    left: 5px;
+  }
+}
