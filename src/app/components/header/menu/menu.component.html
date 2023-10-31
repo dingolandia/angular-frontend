@@ -1,0 +1,12 @@
+<nav class="menu-topo">
+  <ul>
+
+    <li routerLinkActive="selecionado" *ngFor="let item of menuItems">
+      <a
+        [routerLink]="item.url"
+        routerLinkActive="active"
+        >{{ item.descricao }}</a
+      >
+    </li>
+  </ul>
+</nav>
