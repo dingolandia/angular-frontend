@@ -1,0 +1,22 @@
+.banner-area {
+  min-height: 200px;
+  background-color: #000;
+  color: #fff;
+  background: url("/assets/images/banner-bg.jpg") #000 center 0 repeat-x;
+  overflow: hidden;
+}
+
+.dingAnimation {
+  text-align: center;
+  font-family: "Righteous", cursive;
+  font-weight: 700;
+  font-size: 30px;
+  height: 200px;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dingAnimation span {
+  filter: drop-shadow(3px 5px 3px #28468a);
+}
