@@ -6,6 +6,7 @@ import { StoreComponent } from './pages/ecommerce/pages/store/store.component';
 import { ProductsComponent } from './pages/ecommerce/pages/products/products.component';
 import { CatalogComponent } from './pages/catalog/catalog.component';
 import { P404Component } from './pages/p404/p404.component';
+import { UserLoginComponent } from './components/forms/user-login/user-login.component';
 
 export const defaultRoutes: Routes = [
   {
@@ -32,6 +33,11 @@ export const defaultRoutes: Routes = [
     path: 'catalogo',
     component: ContentComponent,
     data: { componentContent: CatalogComponent },
+  },
+  {
+    path: 'login',
+    component: ContentComponent,
+    data: { componentContent: UserLoginComponent },
   },
   {
     path: '404',
