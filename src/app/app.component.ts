@@ -6,8 +6,6 @@ import { SettingsService } from './services/settings.service';
 import { ImainMenuItems } from './models/menu.interface';
 import { MenuService } from './services/menu.service';
 import { Router } from '@angular/router';
-import { ContentComponent } from './components/content/content/content.component';
-import { P404Component } from './pages/p404/p404.component';
 
 @Component({
   selector: 'app-root',
