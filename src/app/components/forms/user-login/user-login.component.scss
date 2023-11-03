@@ -1,0 +1,12 @@
+.login-form-container{
+  width: 50%;
+  margin: 0 auto;
+  max-width: 300px;
+
+  .mdc-text-field--filled{
+    background-color: #ccc;
+  }
+  .mat-mdc-form-field{
+    display: block;
+  }
+}

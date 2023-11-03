@@ -1,1 +1,4 @@
-<span>user-menu works!</span>
+<button mat-button [matMenuTriggerFor]="menu" #menuTrigger>Menu</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="openDialog()">Open dialog</button>
+</mat-menu>
