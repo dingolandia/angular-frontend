@@ -6,3 +6,4 @@ export const ALL_STORE_ITEMS_ENDPOINT = "/api/lojas?populate=*";
 export const ONE_STORE_ITEM_ENDPOINT = "/api/lojas/";
 export const ALL_CAR_PARTS_ENDPOINT = "/api/loja-pecas";
 export const ALL_BRANDS_ENDPOINT = "/api/loja-marcas";
+export const USER_LOGIN_ENDPOINT = "/api/auth/local";
