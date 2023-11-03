@@ -32,11 +32,18 @@ export class RouteInitService {
               data: { htmlContent: rota.conteudo[0]?.id },
             }));
 
-          const allRoutes = [...defaultRoutes, ...routes, ...this.wrongWayRoutes];
+          const allRoutes = [
+            ...defaultRoutes,
+            ...routes,
+            ...this.wrongWayRoutes,
+          ];
           this.router.resetConfig(allRoutes);
           resolve(routes);
         }
       });
+    }).catch((error) => {
+      console.error(error);
+      throw error;
     });
   }
 }
