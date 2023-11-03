@@ -24,8 +24,18 @@ import { ShoppingComponent } from './pages/ecommerce/components/shopping/shoppin
 import { P404Component } from './pages/p404/p404.component';
 import { RouteInitService } from './services/route-init.service';
 import { AppRoutingModule } from './app-routing.module';
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { DialogBoxComponent } from './components/dialog-box/dialog-box.component';
+import { UserLoginComponent } from './components/forms/user-login/user-login.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+import { CookieService } from 'ngx-cookie';
 
 export function initializeApp(routerInitService: RouteInitService) {
   return (): Promise<any> => {
@@ -46,6 +56,8 @@ export function initializeApp(routerInitService: RouteInitService) {
     SearchBarComponent,
     ShoppingComponent,
     P404Component,
+    DialogBoxComponent,
+    UserLoginComponent,
   ],
   imports: [
     NgxSpinnerModule,
@@ -56,10 +68,18 @@ export function initializeApp(routerInitService: RouteInitService) {
     FooterModule,
     HttpClientModule,
     AppRoutingModule,
+    MatDialogModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatIconModule,
   ],
   providers: [
     RouteInitService,
     SettingsService,
+    CookieService,
     {
       provide: APP_INITIALIZER,
       useFactory: initializeApp,
