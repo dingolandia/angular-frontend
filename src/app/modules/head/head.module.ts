@@ -14,6 +14,8 @@ import { RedBarComponent } from 'src/app/components/header/red-bar/red-bar.compo
 import { BannerComponent } from 'src/app/components/header/banner/banner.component';
 import { RouterModule } from '@angular/router';
 import { UserMenuComponent } from 'src/app/components/header/user-menu/user-menu.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,7 @@ import { UserMenuComponent } from 'src/app/components/header/user-menu/user-menu
     BannerComponent,
     UserMenuComponent,
   ],
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, MatMenuModule , MatButtonModule],
   providers: [SettingsService],
   exports: [HeadComponent],
 })
