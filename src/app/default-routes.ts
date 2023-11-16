@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { ContentComponent } from './components/content/content/content.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { StoreComponent } from './pages/ecommerce/pages/store/store.component';
@@ -11,37 +10,44 @@ import { UserLoginComponent } from './components/forms/user-login/user-login.com
 export const defaultRoutes: Routes = [
   {
     path: 'home',
-    component: ContentComponent,
-    data: { componentContent: HomeComponent },
+    component: HomeComponent,
+    data: { titleText: 'Home' },
+    title: 'Home',
   },
   {
     path: 'contato',
-    component: ContentComponent,
-    data: { componentContent: ContactComponent },
+    component: ContactComponent,
+    data: { titleText: 'Contato' },
+    title: 'Contato',
   },
   {
     path: 'loja',
-    component: ContentComponent,
-    data: { componentContent: StoreComponent },
+    component: StoreComponent,
+    data: { titleText: 'Loja' },
+    title: 'Loja',
   },
   {
     path: 'produto/:id',
-    component: ContentComponent,
-    data: { componentContent: ProductsComponent },
+    component: ProductsComponent,
+    data: { titleText: 'Produto' },
+    title: 'Produto',
   },
   {
     path: 'catalogo',
-    component: ContentComponent,
-    data: { componentContent: CatalogComponent },
+    component: CatalogComponent,
+    data: { titleText: 'Catálogo' },
+    title: 'Catálogo',
   },
   {
     path: 'login',
-    component: ContentComponent,
-    data: { componentContent: UserLoginComponent },
+    component: UserLoginComponent,
+    data: { titleText: 'Login' },
+    title: 'Login',
   },
   {
     path: '404',
-    component: ContentComponent,
-    data: { componentContent: P404Component },
+    component: P404Component,
+    data: { titleText: 'Página não encontrada' },
+    title: 'Página não encontrada',
   },
 ];
