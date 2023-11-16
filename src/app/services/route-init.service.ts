@@ -4,6 +4,7 @@ import { ImainMenuItems } from '../models/menu.interface';
 import { ContentComponent } from '../components/content/content/content.component';
 import { Router, Routes } from '@angular/router';
 import { defaultRoutes } from '../default-routes';
+import { ContentsLoaderComponent } from '../components/content/content.loader.component';
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +16,7 @@ export class RouteInitService {
 
   private wrongWayRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: '**', redirectTo: '404' },
+    { path: '**', redirectTo: '404', title: 'Página não encontrada', data: { titleText: 'Página não encontrada' } },
   ];
 
   async initAsync() {
@@ -28,8 +29,9 @@ export class RouteInitService {
             .filter((x) => x.conteudo.length > 0)
             .map((rota) => ({
               path: rota.url.replace('/', ''),
-              component: ContentComponent,
-              data: { htmlContent: rota.conteudo[0]?.id },
+              component: ContentsLoaderComponent,
+              data: { htmlContent: rota.conteudo[0]?.id, titleText: rota.descricao },
+              title: rota.descricao,
             }));
 
           const allRoutes = [
