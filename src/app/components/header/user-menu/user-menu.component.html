@@ -1,4 +1,12 @@
-<button mat-button [matMenuTriggerFor]="menu" #menuTrigger>Menu</button>
-<mat-menu #menu="matMenu">
-  <button mat-menu-item (click)="openDialog()">Open dialog</button>
-</mat-menu>
+<div *ngIf="!isLogged">
+  <button mat-stroked-button color="white" (click)="openDialogLogin()">
+    Login
+  </button>
+  <button mat-stroked-button color="white" (click)="openDialogSignup()">
+    Cadastro
+  </button>
+</div>
+<div *ngIf="isLogged">
+  <span>Perfil usuário logado</span>
+  <a routerLink="." queryParamsHandling="preserve" role="button" (click)="logout()">LOGOUT</a>
+</div>
