@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TitleBarComponent } from './title-bar.component';
+import { ActivatedRoute } from '@angular/router';
+import { MockService } from 'ng-mocks';
 
 describe('TitleBarComponent', () => {
   let component: TitleBarComponent;
@@ -8,7 +10,10 @@ describe('TitleBarComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TitleBarComponent]
+      declarations: [TitleBarComponent],
+      providers: [
+        { provide: ActivatedRoute, useValue: MockService(ActivatedRoute) },
+      ],
     });
     fixture = TestBed.createComponent(TitleBarComponent);
     component = fixture.componentInstance;
