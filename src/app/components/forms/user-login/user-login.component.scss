@@ -1,7 +1,15 @@
+:host-context {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+}
+
 .login-form-container{
   width: 50%;
   margin: 0 auto;
-  max-width: 300px;
+  min-width: 350px;
+  max-width: 450px;
 
   .mdc-text-field--filled{
     background-color: #ccc;

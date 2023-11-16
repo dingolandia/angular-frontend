@@ -1,14 +1,20 @@
 import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { CookieService } from 'ngx-cookie';
-import { ENTER_WITH, INVALID_EMAIL, MUST_HAVE_VALUE, SEND, YOUR_EMAIL, YOUR_PASSWORD } from 'src/app/constants/constants';
+import { MatDialog } from '@angular/material/dialog';
+import {
+  ENTER_WITH,
+  INVALID_EMAIL,
+  MUST_HAVE_VALUE,
+  SEND,
+  YOUR_EMAIL,
+  YOUR_PASSWORD,
+} from 'src/app/constants/constants';
 import { UserAuthenticationService } from 'src/app/services/user-authentication.service';
 
 @Component({
   selector: 'app-user-login',
   templateUrl: './user-login.component.html',
   styleUrls: ['./user-login.component.scss'],
-  providers: [CookieService]
 })
 export class UserLoginComponent {
   email = new FormControl('', [Validators.required, Validators.email]);
@@ -30,19 +36,24 @@ export class UserLoginComponent {
     return this.email.hasError('email') ? INVALID_EMAIL : '';
   }
 
-  constructor(private auth:UserAuthenticationService) { }
+  constructor(
+    private auth: UserAuthenticationService,
+    private modal: MatDialog
+  ) {}
 
-  validateAndSend() {
+  validateAndSend(event: Event) {
+    event.preventDefault();
     this.email.markAsTouched();
     this.password.markAsTouched();
 
     if (this.email.valid && this.password.valid) {
-      this.auth.login(this.email.value, this.password.value).subscribe((data) => {
-        if (data !== undefined) {
-          console.log(data);
-        }
-      })
-      alert("Email: " + this.email.value + "\nSenha: " + this.password.value);
+      this.auth
+        .login(this.email.value, this.password.value)
+        .subscribe((data) => {
+          if (data !== undefined) {
+            this.modal.closeAll();
+          }
+        });
     }
   }
 }

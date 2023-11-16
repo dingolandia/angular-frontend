@@ -1,18 +1,39 @@
 <div class="login-form-container">
-  <mat-form-field color="primary">
-    <mat-label>{{labelEmail}}</mat-label>
-    <input matInput placeholder="usuario@gmail.com" [formControl]="email" required>
-    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-  </mat-form-field>
+  <form>
+    <mat-form-field color="primary">
+      <mat-label>{{ labelEmail }}</mat-label>
+      <input
+        matInput
+        placeholder="usuario@gmail.com"
+        [formControl]="email"
+        required
+      />
+      <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
+    </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>{{labelPassword}}</mat-label>
-    <input matInput [type]="hide ? 'password' : 'text'" [formControl]="password" required>
-    <mat-error *ngIf="password.invalid">{{getErrorMessage()}}</mat-error>
-    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    <mat-form-field>
+      <mat-label>{{ labelPassword }}</mat-label>
+      <input
+        matInput
+        [type]="hide ? 'password' : 'text'"
+        [formControl]="password"
+        autocomplete="on"
+        required
+      />
+      <mat-error *ngIf="password.invalid">{{ getErrorMessage() }}</mat-error>
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="validateAndSend($event)">
+      {{ labelSendButton }}
     </button>
-  </mat-form-field>
-
-  <button mat-raised-button color="primary" (click)="validateAndSend()">{{labelSendButton}}</button>
+  </form>
 </div>
