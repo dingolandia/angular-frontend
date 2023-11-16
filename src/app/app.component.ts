@@ -1,11 +1,10 @@
 //app.component.ts
 
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { Isettings } from './models/settings.interface';
 import { SettingsService } from './services/settings.service';
 import { ImainMenuItems } from './models/menu.interface';
 import { MenuService } from './services/menu.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -20,9 +19,10 @@ export class AppComponent {
   appSettings: Isettings | undefined;
   menuItems: ImainMenuItems[] = [];
 
-  private settingsService = inject(SettingsService);
-  private menuService = inject(MenuService);
-  private router = inject(Router);
+  constructor(
+    private settingsService: SettingsService,
+    private menuService: MenuService
+  ) {}
 
   ngOnInit(): void {
     this.settingsService.getSettings().subscribe((data) => {
