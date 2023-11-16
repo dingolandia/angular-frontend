@@ -6,11 +6,13 @@ import { ContentsWrapComponent } from 'src/app/components/content/contents.wrap.
 import { RouterModule } from '@angular/router';
 import { SpinnerComponent } from 'src/app/components/loading/spinner/spinner.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { LoadingService } from 'src/app/services/loading.service';
 
 @NgModule({
   declarations: [ContentComponent, TitleBarComponent, ContentsWrapComponent, SpinnerComponent,],
   imports: [CommonModule, RouterModule, NgxSpinnerModule],
   exports: [ContentsWrapComponent],
+  providers: [LoadingService],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class ContentModule {}
