@@ -1,5 +1,6 @@
-import { Component, Input, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { LoadingService } from 'src/app/services/loading.service';
 
 @Component({
   selector: 'app-spinner',
@@ -7,15 +8,16 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./spinner.component.scss'],
 })
 export class SpinnerComponent {
-  @Input() isLoading: boolean = false;
-
-  private spinner = inject(NgxSpinnerService);
-
-  ngOnInit(): void {
-    if (this.isLoading) {
-      this.spinner.show();
-    } else {
-      this.spinner.hide();
-    }
+  constructor(
+    private spinner: NgxSpinnerService,
+    private loadingService: LoadingService,
+  ) {
+    loadingService.loading$.subscribe((loadingStatus) => {
+      if (loadingStatus) {
+        spinner.show();
+      } else {
+        spinner.hide();
+      }
+    });
   }
 }
