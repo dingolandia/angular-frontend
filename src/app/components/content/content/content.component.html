@@ -3,19 +3,10 @@
     <div class="wrapConteudo">
       <div id="areaConteudos" class="mobile-content">
         <div class="home-conteudos">
-          <router-outlet></router-outlet>
-          <!-- Renderiza o componente da página se houver um -->
-          <ng-container *ngIf="componentContent; else dynamicContent">
-            <ng-container *ngComponentOutlet="componentContent"></ng-container>
-          </ng-container>
-
-          <!-- Renderiza conteúdo dinâmico se não houver um componente de página -->
-          <ng-template #dynamicContent>
-            <div [innerHTML]="htmlContent">dinamico html</div>
-          </ng-template>
+          <router-outlet *ngIf="!htmlContent"></router-outlet>
         </div>
       </div>
     </div>
-    <app-spinner [isLoading]="loading"></app-spinner>
+    <app-spinner></app-spinner>
   </div>
 </div>
