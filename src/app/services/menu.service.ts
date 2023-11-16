@@ -4,9 +4,7 @@ import { Observable, catchError, map, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { FULL_URL, MENU_ITEMS_ENDPOINT } from '../constants/enpoints';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
 export class MenuService {
   private menuItems: ImainMenuItems[] = [];
 
