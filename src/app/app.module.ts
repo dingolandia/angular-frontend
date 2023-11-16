@@ -35,10 +35,15 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
-import { CookieService } from 'ngx-cookie';
+import { CookieService } from 'ngx-cookie-service';
+import { UserProfileComponent } from './pages/user/user-profile/user-profile.component';
+import { ModalUserLoginComponent } from './components/forms/modal-user-login/modal-user-login.component';
+import { ModalHeaderComponent } from './components/forms/modal-header/modal-header.component';
+import { UserSignupComponent } from './components/forms/user-signup/user-signup.component';
+import { Routes } from '@angular/router';
 
 export function initializeApp(routerInitService: RouteInitService) {
-  return (): Promise<any> => {
+  return (): Promise<Routes> => {
     return routerInitService.initAsync();
   };
 }
@@ -58,6 +63,10 @@ export function initializeApp(routerInitService: RouteInitService) {
     P404Component,
     DialogBoxComponent,
     UserLoginComponent,
+    UserProfileComponent,
+    ModalUserLoginComponent,
+    ModalHeaderComponent,
+    UserSignupComponent,
   ],
   imports: [
     NgxSpinnerModule,
